@@ -1,0 +1,10 @@
+# Extensiones de sistema
+.DS_Store
+Thumbs.db
+
+# Carpetas de editores
+.vscode/
+.idea/
+
+# Vercel
+.vercel
