@@ -9,7 +9,10 @@
 body {
     background-color: #f4f7f6;
     display: flex;
+    flex-direction: column; /* Apila header y main verticalmente si están fuera */
+    align-items: center;    /* Centra horizontalmente */
     justify-content: center;
+    min-height: 100vh;      /* Asegura que use todo el alto de la pantalla */
     padding: 20px;
 }
 
