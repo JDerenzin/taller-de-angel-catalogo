@@ -1,79 +1,28 @@
-// 1. Datos del catálogo (fáciles de editar)
 const productos = [
-    { id: 1, nombre: "Producto A", precio: 10 },
-    { id: 2, nombre: "Producto B", precio: 20 },
-    { id: 3, nombre: "Producto C", precio: 15 }
+    { nombre: "Jardín de la Alegría", precio: "25.00", img: "img/jardin-de-la-alegria.webp", desc: "Ramo de miniflores amarillas + abejas + cartel de corazón" },
+    { nombre: "Cielo Eterno", precio: "15.00", img: "img/cielo-eterno.webp", desc: "1 tulipán azul en ramo" },
+    { nombre: "Rayo de Luz", precio: "35.00", img: "img/rayo-de-luz.webp", desc: "Girasol + 4 margaritas + 1 rama de eucalipto" },
+    { nombre: "Sol de Mediodía", precio: "8.00", img: "img/sol-de-mediodia.webp", desc: "3 girasoles + 8 margaritas + 2 ramas de eucalipto" },
+    { nombre: "Trilogía del Afecto", precio: "28.00", img: "img/trilogia-del-afecto.webp", desc: "3 tulipanes rojos con mensaje" },
+    { nombre: "Elegancia Silvestre", precio: "40.00", img: "img/elegancia-silvestre.webp", desc: "2 lirios rosados + 4 margaritas (versión girasol) + 2 eucaliptos" }
 ];
 
-let carrito = [];
+const container = document.getElementById('catalogo');
 
-// 2. Referencias al DOM
-const catalogContainer = document.getElementById('catalog-container');
-const stepSelection = document.getElementById('step-selection');
-const stepSummary = document.getElementById('step-summary');
-const summaryText = document.getElementById('summary-text');
-const btnFinalizar = document.getElementById('btn-copy-redirect');
-const btnBack = document.getElementById('btn-back');
-
-// 3. Renderizar Catálogo
-function renderCatalog() {
-    productos.forEach(prod => {
-        const btn = document.createElement('button');
-        btn.innerText = `${prod.nombre} - $${prod.precio}`;
-        btn.onclick = () => seleccionarProducto(prod);
-        catalogContainer.appendChild(btn);
-    });
+function render() {
+    container.innerHTML = productos.map(p => `
+        <div class="card">
+            <img src="${p.img}" alt="${p.nombre}" loading="lazy">
+            <div class="info">
+                <h3>${p.nombre}</h3>
+                <p>${p.desc}</p>
+                <div class="precio">S/${p.precio}</div>
+                <a href="https://www.instagram.com/taller_de_angel_/" class="btn-ig">
+                    Consultar disponibilidad
+                </a>
+            </div>
+        </div>
+    `).join('');
 }
 
-// 4. Lógica de Selección
-function seleccionarProducto(prod) {
-    carrito.push(prod);
-    mostrarResumen();
-}
-
-function mostrarResumen() {
-    stepSelection.style.display = 'none';
-    stepSummary.style.display = 'block';
-
-    const lista = carrito.map(p => `- ${p.nombre} ($${p.precio})`).join('\n');
-    const total = carrito.reduce((sum, p) => sum + p.precio, 0);
-    
-    summaryText.innerText = `Tu pedido:\n${lista}\n\nTotal: $${total}`;
-}
-
-// 5. El Corazón del MVP: Copiar y Redirigir
-btnFinalizar.onclick = async () => {
-    const textoACopiar = summaryText.innerText;
-    const instagramUser = "taller_de_angel_"; // <--- Cambia esto
-
-    try {
-        await navigator.clipboard.writeText(textoACopiar);
-        
-        // Feedback visual rápido
-        btnFinalizar.innerText = "¡Copiado! Abriendo Instagram...";
-        btnFinalizar.style.backgroundColor = "#25D366";
-
-        setTimeout(() => {
-            window.location.href = `https://ig.me/m/${instagramUser}`;
-        }, 1000);
-
-    } catch (err) {
-        alert("No se pudo copiar automáticamente. Por favor, selecciona el texto y cópialo manualmente.");
-    }
-};
-
-btnBack.onclick = () => {
-    // Vaciar el carrito para un nuevo pedido
-    carrito = []; 
-    
-    // Alternar visibilidad de las secciones
-    stepSummary.style.display = 'none';
-    stepSelection.style.display = 'block';
-    
-    // Restaurar el texto del botón de finalizar por si ya se había usado
-    btnFinalizar.innerText = "Copiar Resumen y abrir Instagram";
-    btnFinalizar.style.background = ""; // Vuelve al gradiente del CSS
-};
-
-// Inicializar
-renderCatalog();
+render();

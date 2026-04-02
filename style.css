@@ -1,92 +1,74 @@
-/* Reset básico y tipografía */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-
 body {
-    background-color: #f4f7f6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 15px; background: #fdfaf6; color: #444;
+}
+
+.logo-container {
+    margin-bottom: 15px; /* Espacio entre el logo y el H1 */
     display: flex;
-    flex-direction: column; /* Apila header y main verticalmente si están fuera */
-    align-items: center;    /* Centra horizontalmente */
     justify-content: center;
-    min-height: 100vh;      /* Asegura que use todo el alto de la pantalla */
-    padding: 20px;
 }
 
-#app {
-    background: white;
-    max-width: 400px;
-    width: 100%;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    text-align: center;
+.main-logo {
+    width: 120px; /* Ajusta este valor según el diseño de tu logo */
+    height: auto;
+    border-radius: 50%; /* Opcional: solo si tu logo es circular o quieres ese efecto */
+    object-fit: contain;
+    /* Un toque de sombra suave para que resalte */
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
 }
 
-h1 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    color: #333;
+header { text-align: center; padding: 40px 10px; }
+header h1 {
+    color: #d4a373;
+    margin: 10px 0 5px 0; /* Ajustamos márgenes para que no haya huecos raros */
+    font-size: 1.8rem; /* Un poco más pequeño para dar jerarquía al logo */
+}
+header p { font-style: italic; color: #888; }
+
+.grid {
+    display: flex; flex-direction: column; gap: 25px;
+    max-width: 500px; margin: 0 auto;
 }
 
-h2 {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    color: #666;
+.card {
+    background: #fff; border-radius: 20px; overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
-/* Contenedor de botones del catálogo */
-#catalog-container {
-    display: grid;
-    gap: 10px;
+.card img { width: 100%; height: auto; display: block; }
+
+.info { padding: 20px; text-align: center; }
+.info h3 { margin: 10px 0; font-size: 1.4rem; }
+.info p { font-size: 0.9rem; color: #777; margin-bottom: 15px; }
+
+.precio { 
+    font-size: 1.5rem; font-weight: bold; color: #d4a373; margin-bottom: 15px; 
 }
 
-button {
-    background-color: #0070f3; /* Azul estilo Vercel */
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.1s, background-color 0.2s;
-}
-
-button:active {
-    transform: scale(0.98);
-}
-
-button.secondary {
-    background-color: #eaeaea;
-    color: #666;
-    margin-top: 10px;
-}
-
-/* Área del Resumen (Vital para el MVP) */
-#summary-text {
-    background-color: #f9f9f9;
-    border: 1px dashed #ccc;
-    padding: 15px;
-    margin: 20px 0;
-    text-align: left;
-    font-family: monospace;
-    font-size: 0.9rem;
-    line-height: 1.4;
-    white-space: pre-wrap; /* Esto respeta los saltos de línea de JS */
-    border-radius: 5px;
-}
-
-/* Botón de Instagram con color distintivo */
-#btn-copy-redirect {
+.btn-ig {
+    display: inline-block;
+    /* Degradado oficial de Instagram */
+    background: #f09433;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    width: 100%;
-    margin-top: 10px;
+    
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    width: 80%;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
+    border: none;
+    cursor: pointer;
 }
 
-#btn-copy-redirect:disabled {
-    background: #ccc;
+.btn-ig:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 10px rgba(220, 39, 67, 0.2);
 }
+
+footer { text-align: center; padding: 50px; color: #bbb; font-size: 0.8rem; }
