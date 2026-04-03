@@ -4,7 +4,7 @@ const productos = [
     { nombre: "Rayo de Luz", precio: "20.00", img: "img/rayo-de-luz.webp" },
     { nombre: "Sol de Mediodía", precio: "30.00", img: "img/sol-de-mediodia.webp" },
     { nombre: "I Loviu", precio: "30.00", img: "img/i-loviu.webp" },
-    { nombre: "Dulce Delirio", precio: "30.00", img: "img/dulce-delirio.webp" }
+    { nombre: "Dulce Delirio", precio: "30.00", img: "img/dulce-delirio.webp" },
     { nombre: "Te quiero de Forma Verdadera", precio: "40.00", img: "img/te-quiero-de-forma-verdadera.webp" }
 ];
 
