@@ -36,7 +36,24 @@ header p { font-style: italic; color: #888; }
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
-.card img { width: 100%; height: auto; display: block; }
+.slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+.slide {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
 
 .info { padding: 20px; text-align: center; }
 .info h3 { margin: 10px 0; font-size: 1.4rem; }
