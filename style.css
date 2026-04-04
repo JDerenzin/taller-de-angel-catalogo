@@ -27,17 +27,27 @@ header h1 {
 header p { font-style: italic; color: #888; }
 
 .grid {
-    display: flex; flex-direction: column; gap: 25px;
-    max-width: 500px; margin: 0 auto;
+    display: block !important;
+    padding-bottom: 50px;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .card {
-    background: #fff; border-radius: 20px; overflow: hidden;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px !important;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
 .slider {
     display: flex;
+    width: 100%;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;

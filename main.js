@@ -136,6 +136,7 @@ function render() {
                     </div>
                 `).join('')}
             </div>
+        </div>
     `).join('');
 }
 
