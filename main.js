@@ -5,23 +5,19 @@ const productos = [
             { nombre: "Ramito de Abejitas",
 	      precio: "35.00",
 	      img: "img/ramito-de-abejitas-v1.webp",
-	      desc: "Ramo de minigirasoles + abejas papercraft + cartel de corazón" },
+	      desc: "Ramo de minigirasoles + abejas papercraft + cartel de corazón + luces LED" },
             { nombre: "Ramito de Abejitas con Luces",
-	      precio: "40.00",
+	      precio: "35.00",
 	      img: "img/ramito-de-abejitas-vluces.webp",
-	      desc: "Ramo de miniflores amarillas + abejas papercraft + cartel de corazón + Luces LED" }
+	      desc: "Ramo de miniflores amarillas + abejas papercraft + cartel de corazón + luces LED" }
         ]
     },
         {
         id: "ramo-bouquet",
         variantes: [
             { nombre: "Ramo Bouquet",
-	      precio: "35.00",
-	      img: "img/ramo-bouquet-v1.webp",
-	      desc: "Ramo de miniflores azules + minitarjetita personalizada" },
-            { nombre: "Ramo Bouquet",
-	      precio: "35.00",
-	      img: "img/ramo-bouquet-v2.webp",
+	      precio: "20.00",
+	      img: "img/ramo-bouquet.webp",
 	      desc: "Ramo de miniflores azules + minitarjetita personalizada" }
         ]
     },
@@ -73,7 +69,7 @@ const productos = [
         id: "mi-pequeño-delirio",
         variantes: [
             { nombre: "Mi Pequeño Delirio",
-	      precio: "15.00",
+	      precio: "12.00 por unidad",
 	      img: "img/mi-pequeño-delirio.webp",
 	      desc: "1 lirio azul o blanco + mensaje en portada" }
         ]
@@ -88,11 +84,11 @@ const productos = [
         ]
     },
     {
-        id: "lirio-para-mi-delirio",
+        id: "lirios-para-mi-delirio",
         variantes: [
-            { nombre: "Lirio para Mi Delirio",
-	      precio: "35.00",
-	      img: "img/lirio-para-mi-delirio.webp",
+            { nombre: "Lirios para Mi Delirio",
+	      precio: "30.00",
+	      img: "img/lirios-para-mi-delirio.webp",
 	      desc: "3 lirios lilas auténticos con estambres" }
         ]
     },
