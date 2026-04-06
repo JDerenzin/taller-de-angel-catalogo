@@ -98,8 +98,7 @@ header p { font-style: italic; color: #888; }
 
 .slide img {
     width: 100%;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
+    object-fit: normal;
     object-position: center;
     border-radius: 12px 12px 0 0;
 }
