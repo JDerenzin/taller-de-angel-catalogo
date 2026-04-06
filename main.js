@@ -17,11 +17,7 @@ const productos = [
         variantes: [
             { nombre: "Ramo Bouquet",
 	      precio: "20.00",
-	      img: "img/ramo-bouquet-v1.webp",
-	      desc: "Ramo de miniflores azules + minitarjetita personalizada" },
-            { nombre: "Ramo Bouquet",
-	      precio: "20.00",
-	      img: "img/ramo-bouquet-v2.webp",
+	      img: "img/ramo-bouquet.webp",
 	      desc: "Ramo de miniflores azules + minitarjetita personalizada" }
         ]
     },
