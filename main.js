@@ -125,34 +125,26 @@ function render() {
     container.innerHTML = productos.map(p => {
         const total = p.variantes.length;
         
-        // Creamos los puntitos (solo si hay más de 1 variante)
+        // Solo creamos puntos y contador si hay más de 1 variante
         const dots = total > 1 ? `
-            <div class="dots-container">
-                ${p.variantes.map((_, index) => `
-                    <span class="dot ${index === 0 ? 'active' : ''}"></span>
-                `).join('')}
+            <div class="dots-container" id="dots-${p.id}">
+                ${p.variantes.map((_, i) => `<span class="dot ${i === 0 ? 'active' : ''}"></span>`).join('')}
             </div>
         ` : '';
 
-        // Creamos el contador (solo si hay más de 1 variante)
-        const counter = total > 1 ? `
-            <div class="counter">1 / ${total}</div>
-        ` : '';
+        const counter = total > 1 ? `<div class="counter" id="counter-${p.id}">1 / ${total}</div>` : '';
 
         return `
-            <div class="card">
+            <div class="card" data-id="${p.id}">
                 ${counter}
-                
                 <div class="slider">
-                    ${p.variantes.map(v => `
-                        <div class="slide">
+                    ${p.variantes.map((v, i) => `
+                        <div class="slide" data-index="${i}">
                             <img src="${v.img}" alt="${v.nombre}">
                         </div>
                     `).join('')}
                 </div>
-
                 ${dots}
-
                 <div class="info">
                     <h3>${p.variantes[0].nombre}</h3>
                     <p>${p.variantes[0].desc}</p>
@@ -161,6 +153,41 @@ function render() {
             </div>
         `;
     }).join('');
+
+    // Una vez que el HTML existe, activamos los sensores
+    setupObservers();
+}
+
+function setupObservers() {
+    const options = {
+        root: null, // El "visor" es la pantalla del celular
+        threshold: 0.6 // Se activa cuando el 60% de la imagen está visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const slide = entry.target;
+                const card = slide.closest('.card');
+                const productId = card.dataset.id;
+                const index = parseInt(slide.dataset.index);
+                const total = card.querySelectorAll('.slide').length;
+
+                // 1. Actualizar el contador (ej: 2 / 3)
+                const counter = document.getElementById(`counter-${productId}`);
+                if (counter) counter.innerText = `${index + 1} / ${total}`;
+
+                // 2. Actualizar los puntitos
+                const dots = document.querySelectorAll(`#dots-${productId} .dot`);
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            }
+        });
+    }, options);
+
+    // Le decimos al sensor que vigile cada imagen de cada producto
+    document.querySelectorAll('.slide').forEach(slide => observer.observe(slide));
 }
 
 render();
