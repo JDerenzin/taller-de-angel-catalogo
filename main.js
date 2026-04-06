@@ -124,37 +124,20 @@ const container = document.getElementById('catalogo');
 function render() {
     container.innerHTML = productos.map(p => `
         <div class="card">
-            <div class="slider-wrapper">
-                <button class="btn-nav prev" onclick="moveSlider(this, -1)">&#10094;</button>
-                <button class="btn-nav next" onclick="moveSlider(this, 1)">&#10095;</button>
-
-                <div class="slider">
-                    ${p.variantes.map(v => `
-                        <div class="slide">
-                            <img src="${v.img}" alt="${v.nombre}">
-                            <div class="info">
-                                <h3>${v.nombre}</h3>
-                                <p>${v.desc}</p>
-                                <div class="precio">S/${v.precio}</div>
-                            </div>
+            <div class="slider">
+                ${p.variantes.map(v => `
+                    <div class="slide">
+                        <img src="${v.img}" alt="${v.nombre}">
+                        <div class="info">
+                            <h3>${v.nombre}</h3>
+                            <p>${v.desc}</p>
+                            <div class="precio">S/${v.precio}</div>
                         </div>
-                    `).join('')}
-                </div>
+                    </div>
+                `).join('')}
             </div>
         </div>
     `).join('');
-}
-
-function moveSlider(button, direction) {
-    // Buscamos el slider que está dentro del mismo wrapper que el botón
-    const slider = button.parentElement.querySelector('.slider');
-    // El ancho de una tarjeta (100% del slider)
-    const scrollAmount = slider.clientWidth;
-    
-    slider.scrollBy({
-        left: scrollAmount * direction,
-        behavior: 'smooth'
-    });
 }
 
 render();
