@@ -20,4 +20,4 @@ Para probarlo localmente, puedes usar cualquier servidor estático (como 'Live S
 Para desplegar en Vercel:
 1. Sube este repo a GitHub.
 2. Conecta el repo en el dashboard de Vercel.
-3. ¡Listo!
+3. ¡Listo! :3
