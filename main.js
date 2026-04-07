@@ -5,7 +5,7 @@ const productos = [
             { nombre: "Ramito de Abejitas",
 	      precio: "35.00",
 	      img: "img/ramito-de-abejitas-v1.webp",
-	      desc: "Ramo de minigirasoles + abejas papercraft + cartel de corazón" },
+	      desc: "Ramo de minigirasoles + abejas de maincraft + cartel de corazón" },
             { nombre: "Ramito de Abejitas con Luces",
 	      precio: "35.00",
 	      img: "img/ramito-de-abejitas-vluces.webp",
@@ -24,10 +24,10 @@ const productos = [
     {
         id: "tulipan-premium",
         variantes: [
-            { nombre: "Tulipán Premium",
-	      precio: "12.00 por unidad",
+            { nombre: "Tulipán Premium (Color a su elección)",
+	      precio: "12.00",
 	      img: "img/tulipan-premium.webp",
-	      desc: "1 tulipán azul en ramo + mensaje en portada" }
+	      desc: "1 tulipán premium en ramo + mensaje en portada" }
         ]
     },
     {
@@ -51,27 +51,27 @@ const productos = [
     {
         id: "i-loviu",
         variantes: [
-            { nombre: "I Loviu (Rojo)",
+            { nombre: "I Loviu (Escoge tu color)",
 	      precio: "30.00",
 	      img: "img/i-loviu-vrojo.webp",
-	      desc: "3 tulipanes rojos + mensaje en portada" },
-            { nombre: "I Loviu (Rosa)",
+	      desc: "3 tulipanes premium + mensaje en portada" },
+            { nombre: "I Loviu (Escoge tu color)",
 	      precio: "30.00",
 	      img: "img/i-loviu-vrosa.webp",
-	      desc: "3 tulipanes rosas + mensaje en portada" },
-            { nombre: "I Loviu (Lila)",
+	      desc: "3 tulipanes premium + mensaje en portada" },
+            { nombre: "I Loviu (Escoge tu color)",
 	      precio: "30.00",
 	      img: "img/i-loviu-vlila.webp",
-	      desc: "3 tulipanes lilas + mensaje en portada" }
+	      desc: "3 tulipanes premium + mensaje en portada" }
         ]
     },
         {
         id: "mi-pequeño-delirio",
         variantes: [
             { nombre: "Mi Pequeño Delirio",
-	      precio: "15.00",
+	      precio: "12.00",
 	      img: "img/mi-pequeño-delirio.webp",
-	      desc: "1 lirio azul o blanco + mensaje en portada" }
+	      desc: "1 lirio (color a tu elección) + mensaje en portada" }
         ]
     },
     {
@@ -80,7 +80,7 @@ const productos = [
             { nombre: "Dulce Delirio",
 	      precio: "30.00",
 	      img: "img/dulce-delirio.webp",
-	      desc: "2 lirios rosados + 4 margaritas (versión girasol) + 2 hojas de eucalipto + mensaje en portada" }
+	      desc: "2 lirios (color que gustes) + 4 margaritas (versión girasol) + 2 hojas de eucalipto + mensaje en portada" }
         ]
     },
     {
@@ -89,25 +89,25 @@ const productos = [
             { nombre: "Lirios para Mi Delirio",
 	      precio: "30.00",
 	      img: "img/lirios-para-mi-delirio.webp",
-	      desc: "3 lirios lilas auténticos con estambres" }
+	      desc: "3 lirios auténticos con estambres (colores a tu elección)" }
         ]
     },
     {
         id: "te-quiero-de-forma-verdadera",
         variantes: [
-            { nombre: "Te Quiero de Forma Verdadera (Versión Luz Natural)",
+            { nombre: "Te Quiero de Forma Verdadera",
 	      precio: "40.00",
 	      img: "img/te-quiero-de-forma-verdadera-vluznatural.webp",
 	      desc: "5 gerberas + 2 hojas de eucalipto + 2 hojas de nubes" },
-            { nombre: "Te Quiero de Forma Verdadera (Rosa)",
+            { nombre: "Te Quiero de Forma Verdadera",
 	      precio: "40.00",
 	      img: "img/te-quiero-de-forma-verdadera-vrosa.webp",
 	      desc: "5 gerberas + 2 hojas de eucalipto + 2 hojas de nubes" },
-            { nombre: "Te Quiero de Forma Verdadera (Blanco)",
+            { nombre: "Te Quiero de Forma Verdadera",
 	      precio: "40.00",
 	      img: "img/te-quiero-de-forma-verdadera-vblanco.webp",
 	      desc: "5 gerberas + 2 hojas de eucalipto + 2 hojas de nubes" },
-            { nombre: "Te Quiero de Forma Verdadera (Lila)",
+            { nombre: "Te Quiero de Forma Verdadera",
 	      precio: "40.00",
 	      img: "img/te-quiero-de-forma-verdadera-vlila.webp",
 	      desc: "5 gerberas + 2 hojas de eucalipto + 2 hojas de nubes" }
