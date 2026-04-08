@@ -2,14 +2,14 @@ const productos = [
     {
         id: "ramito-de-abejitas",
         variantes: [
-            { nombre: "Ramo Bouquet",
+            { nombre: "Ramito de Abejitas",
 	      precio: "35.00",
 	      img: "img/ramito-de-abejitas-v1.webp",
 	      desc: "Ramo de minigirasoles + abejas de maincraft + cartel de corazón" },
-            { nombre: "Ramito de Abejitas con Luces",
+            { nombre: "Ramito de Abejitas",
 	      precio: "35.00",
 	      img: "img/ramito-de-abejitas-vluces.webp",
-	      desc: "Ramo de miniflores amarillas + abejas papercraft + cartel de corazón + Luces LED" }
+	      desc: "Ramo de miniflores amarillas + abejas de maincraft + cartel de corazón + Luces LED" }
         ]
     },
         {
