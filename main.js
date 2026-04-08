@@ -2,7 +2,7 @@ const productos = [
     {
         id: "ramito-de-abejitas",
         variantes: [
-            { nombre: "Ramito de Abejitas",
+            { nombre: "Ramo Bouquet",
 	      precio: "35.00",
 	      img: "img/ramito-de-abejitas-v1.webp",
 	      desc: "Ramo de minigirasoles + abejas de maincraft + cartel de corazón" },
